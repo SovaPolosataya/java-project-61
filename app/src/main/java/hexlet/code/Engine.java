@@ -1,20 +1,16 @@
 package hexlet.code;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Engine {
-    public static Scanner scanner = new Scanner(System.in);
-    public static Random random = new Random();
-    public static String userName;
-    public static String userAnswer;
-    public static String rightAnswer;
-    public static boolean responseError = false;
-    public static String yes = "yes";
-    public static String no = "no";
-    public static String question;
+
+    static Scanner scanner = new Scanner(System.in);
+    static String userName;
+    static String userAnswer;
+    static String rightAnswer;
+    static boolean responseError = false;
     public static int i = 1;
-    public static int numberOfQuestions = 3;
+    static int numberOfQuestions = 3;
 
     public static void greeting() {
 
@@ -23,8 +19,8 @@ public class Engine {
         userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
     }
-    public static void evaluationOfAnswers() {
-        System.out.println("Question: " + question);
+    public static void evaluationOfAnswers(String rightAnswer) {
+
         System.out.print("Your answer: ");
         userAnswer = scanner.next();
 
@@ -39,6 +35,7 @@ public class Engine {
         }
     }
     public static void congratulations() {
+
         if (!responseError) {
             System.out.println("Congratulations, " + userName + "!");
         }
