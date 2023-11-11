@@ -1,20 +1,33 @@
 package hexlet.code.games;
-import static hexlet.code.Engine.*;
+
+import java.util.Random;
+
+import hexlet.code.Engine;
+
 public class Even {
     public static void evenGame() {
-        greeting();
+        Random random = new Random();
+
+        Engine.greeting();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        while (i <= numberOfQuestions) {
-            int randomNumber = random.nextInt(1000);
+        String rightAnswer;
+        String yes = "yes";
+        String no = "no";
+        int numberOfQuestions = 3;
+        int randomNumber;
+
+        while (Engine.i <= numberOfQuestions) {
+            randomNumber = random.nextInt(1000);
             if (randomNumber % 2 == 0) {
                 rightAnswer = yes;
             } else {
                 rightAnswer = no;
             }
-            question = Integer.toString(randomNumber);
-            evaluationOfAnswers();
+
+            System.out.println("Question: " + randomNumber);
+            Engine.evaluationOfAnswers(rightAnswer);
         }
-        congratulations();
+        Engine.congratulations();
     }
 }
