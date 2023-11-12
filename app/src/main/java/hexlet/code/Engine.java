@@ -7,7 +7,6 @@ public class Engine {
     private static final Scanner scanner = new Scanner(System.in);
     private static String userName;
     private static boolean responseError = false;
-    public static int i = 1;
     private static final int numberOfQuestions = 3;
 
     public static void greeting() {
@@ -17,16 +16,16 @@ public class Engine {
         userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
     }
-    public static void evaluationOfAnswers(String answerToTheQuestion) {
+    public static void evaluationOfAnswers(int i, String answer) {
 
         System.out.print("Your answer: ");
         String userAnswer = scanner.next();
 
-        if (userAnswer.equals(answerToTheQuestion)) {
+        if (userAnswer.equals(answer)) {
             System.out.println("Correct!");
             i = i + 1;
         } else {
-            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + answerToTheQuestion + "'.");
+            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + answer + "'.");
             System.out.println("Let's try again, " + userName + "!");
             responseError = true;
             i = numberOfQuestions + 1;

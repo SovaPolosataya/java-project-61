@@ -16,14 +16,17 @@ public class Calc {
         int answer;
         String rightAnswer;
         String question;
-        int numberOfQuestions = 3;
+        final int numberOfQuestions = 3;
         int randomNumber1;
         int randomNumber2;
+        int i = 1;
+        final int maxRandomNumber = 100;
+        final int maxRandomForTheSymbol = 3;
 
-        while (Engine.i <= numberOfQuestions) {
-            randomNumber1 = random.nextInt(100);
-            randomNumber2 = random.nextInt(100);
-            randomForTheSymbol = random.nextInt(3);
+        while (i <= numberOfQuestions) {
+            randomNumber1 = random.nextInt(maxRandomNumber);
+            randomNumber2 = random.nextInt(maxRandomNumber);
+            randomForTheSymbol = random.nextInt(maxRandomForTheSymbol);
 
             switch (randomForTheSymbol) {
                 case 0:
@@ -42,7 +45,7 @@ public class Calc {
             question = randomNumber1 + operator + randomNumber2;
             System.out.println("Question: " + question);
 
-            Engine.evaluationOfAnswers(rightAnswer);
+            Engine.evaluationOfAnswers(i, rightAnswer);
         }
         Engine.congratulations();
     }
