@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 import hexlet.code.Engine;
+import static hexlet.code.Engine.i;
 public class Progression {
     public static void progressionGame() {
         Random random = new Random();
@@ -15,7 +16,6 @@ public class Progression {
         int randomProgressionStep;
         int unknownNumber;
         final int progressionLength = 10;
-        int i = 1;
         final int maxRandomNumber = 30;
         final int maxRandomProgressionStep = 9;
         final int maxUnknownNumber = 10;
@@ -35,7 +35,7 @@ public class Progression {
                 randomNumber += randomProgressionStep;
             }
             System.out.println("");
-            Engine.evaluationOfAnswers(i, rightAnswer);
+            Engine.evaluationOfAnswers(rightAnswer);
         }
         Engine.congratulations();
     }

@@ -3,6 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 
 import hexlet.code.Engine;
+import static hexlet.code.Engine.i;
 
 public class Even {
     public static void evenGame() {
@@ -16,7 +17,6 @@ public class Even {
         String no = "no";
         final int numberOfQuestions = 3;
         int randomNumber;
-        int i = 1;
         final int maxRandomNumber = 1000;
 
         while (i <= numberOfQuestions) {
@@ -28,7 +28,7 @@ public class Even {
             }
 
             System.out.println("Question: " + randomNumber);
-            Engine.evaluationOfAnswers(i, rightAnswer);
+            Engine.evaluationOfAnswers(rightAnswer);
         }
         Engine.congratulations();
     }

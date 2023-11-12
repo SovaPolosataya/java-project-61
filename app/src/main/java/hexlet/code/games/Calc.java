@@ -4,6 +4,8 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.i;
+
 public class Calc {
     public static void calcGame() {
         Random random = new Random();
@@ -19,7 +21,6 @@ public class Calc {
         final int numberOfQuestions = 3;
         int randomNumber1;
         int randomNumber2;
-        int i = 1;
         final int maxRandomNumber = 100;
         final int maxRandomForTheSymbol = 3;
 
@@ -45,7 +46,7 @@ public class Calc {
             question = randomNumber1 + operator + randomNumber2;
             System.out.println("Question: " + question);
 
-            Engine.evaluationOfAnswers(i, rightAnswer);
+            Engine.evaluationOfAnswers(rightAnswer);
         }
         Engine.congratulations();
     }

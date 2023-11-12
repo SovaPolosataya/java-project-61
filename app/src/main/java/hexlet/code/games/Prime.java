@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 import hexlet.code.Engine;
+import static hexlet.code.Engine.i;
 
 public class Prime {
     public static void primeGame() {
@@ -16,7 +17,6 @@ public class Prime {
         final int numberOfQuestions = 3;
         int randomNumber;
         final int maxRandomNumber = 100;
-        int i = 1;
 
         while (i <= numberOfQuestions) {
             randomNumber = random.nextInt(maxRandomNumber);
@@ -31,7 +31,7 @@ public class Prime {
                 rightAnswer = yes;
             }
             System.out.println("Question: " + randomNumber);
-            Engine.evaluationOfAnswers(i, rightAnswer);
+            Engine.evaluationOfAnswers(rightAnswer);
         }
         Engine.congratulations();
     }
