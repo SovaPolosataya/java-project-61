@@ -13,15 +13,16 @@ public class Prime {
         String rightAnswer = "";
         String yes = "yes";
         String no = "no";
-        int numberOfQuestions = 3;
+        final int numberOfQuestions = 3;
         int randomNumber;
+        final int maxRandomNumber = 100;
 
         while (Engine.i <= numberOfQuestions) {
-            randomNumber = random.nextInt(100);
+            randomNumber = random.nextInt(maxRandomNumber);
             if (randomNumber < 2) {
                 rightAnswer = no;
             }
-            for (int j = 2; j <= randomNumber / 2; j++) {
+            for (int j = 2; j < randomNumber; j++) {
                 if (randomNumber % j == 0) {
                     rightAnswer = no;
                     break;
