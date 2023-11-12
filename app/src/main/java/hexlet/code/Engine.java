@@ -19,12 +19,12 @@ public class Engine {
         userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
     }
-    public static void evaluationOfAnswers(String rightAnswer2) {
+    public static void evaluationOfAnswers(String answerToTheQuestion) {
 
         System.out.print("Your answer: ");
         userAnswer = scanner.next();
 
-        if (userAnswer.equals(rightAnswer2)) {
+        if (userAnswer.equals(answerToTheQuestion)) {
             System.out.println("Correct!");
             i = i + 1;
         } else {
