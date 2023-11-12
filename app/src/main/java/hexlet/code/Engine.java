@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 public class Engine {
 
-    static Scanner scanner = new Scanner(System.in);
-    static String userName;
-    static String userAnswer;
-    static String rightAnswer;
-    static boolean responseError = false;
+    private static final Scanner scanner = new Scanner(System.in);
+    private static String userName;
+    private static boolean responseError = false;
     public static int i = 1;
-    static int numberOfQuestions = 3;
+    private static final int numberOfQuestions = 3;
 
     public static void greeting() {
 
@@ -22,13 +20,13 @@ public class Engine {
     public static void evaluationOfAnswers(String answerToTheQuestion) {
 
         System.out.print("Your answer: ");
-        userAnswer = scanner.next();
+        String userAnswer = scanner.next();
 
         if (userAnswer.equals(answerToTheQuestion)) {
             System.out.println("Correct!");
             i = i + 1;
         } else {
-            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
+            System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + answerToTheQuestion + "'.");
             System.out.println("Let's try again, " + userName + "!");
             responseError = true;
             i = numberOfQuestions + 1;
