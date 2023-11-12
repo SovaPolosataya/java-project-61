@@ -10,16 +10,20 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         String rightAnswer = "";
-        int numberOfQuestions = 3;
+        final int numberOfQuestions = 3;
         int randomNumber;
         int randomProgressionStep;
         int unknownNumber;
-        int progressionLength = 10;
+        final int progressionLength = 10;
+        int i = 1;
+        final int maxRandomNumber = 30;
+        final int maxRandomProgressionStep = 9;
+        final int maxUnknownNumber = 10;
 
-        while (Engine.i <= numberOfQuestions) {
-            randomNumber = random.nextInt(1, 30);
-            randomProgressionStep = random.nextInt(2, 9);
-            unknownNumber = random.nextInt(1, 10);
+        while (i <= numberOfQuestions) {
+            randomNumber = random.nextInt(1, maxRandomNumber);
+            randomProgressionStep = random.nextInt(2, maxRandomProgressionStep);
+            unknownNumber = random.nextInt(1, maxUnknownNumber);
             System.out.print("Question: ");
             for (int j = 1; j <= progressionLength; j++) {
                 if (j == unknownNumber) {
@@ -31,7 +35,7 @@ public class Progression {
                 randomNumber += randomProgressionStep;
             }
             System.out.println("");
-            Engine.evaluationOfAnswers(rightAnswer);
+            Engine.evaluationOfAnswers(i, rightAnswer);
         }
         Engine.congratulations();
     }

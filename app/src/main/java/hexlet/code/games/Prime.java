@@ -16,8 +16,9 @@ public class Prime {
         final int numberOfQuestions = 3;
         int randomNumber;
         final int maxRandomNumber = 100;
+        int i = 1;
 
-        while (Engine.i <= numberOfQuestions) {
+        while (i <= numberOfQuestions) {
             randomNumber = random.nextInt(maxRandomNumber);
             if (randomNumber < 2) {
                 rightAnswer = no;
@@ -30,7 +31,7 @@ public class Prime {
                 rightAnswer = yes;
             }
             System.out.println("Question: " + randomNumber);
-            Engine.evaluationOfAnswers(rightAnswer);
+            Engine.evaluationOfAnswers(i, rightAnswer);
         }
         Engine.congratulations();
     }
