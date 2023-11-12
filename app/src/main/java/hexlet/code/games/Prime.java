@@ -10,7 +10,7 @@ public class Prime {
         Engine.greeting();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        String rightAnswer = null;
+        String rightAnswer = "";
         String yes = "yes";
         String no = "no";
         int numberOfQuestions = 3;
