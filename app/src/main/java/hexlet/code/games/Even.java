@@ -14,11 +14,13 @@ public class Even {
         String rightAnswer;
         String yes = "yes";
         String no = "no";
-        int numberOfQuestions = 3;
+        final int numberOfQuestions = 3;
         int randomNumber;
+        int i = 1;
+        final int maxRandomNumber = 1000;
 
-        while (Engine.i <= numberOfQuestions) {
-            randomNumber = random.nextInt(1000);
+        while (i <= numberOfQuestions) {
+            randomNumber = random.nextInt(maxRandomNumber);
             if (randomNumber % 2 == 0) {
                 rightAnswer = yes;
             } else {
@@ -26,7 +28,7 @@ public class Even {
             }
 
             System.out.println("Question: " + randomNumber);
-            Engine.evaluationOfAnswers(rightAnswer);
+            Engine.evaluationOfAnswers(i, rightAnswer);
         }
         Engine.congratulations();
     }

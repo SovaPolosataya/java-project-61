@@ -33,18 +33,20 @@ public class Gcd {
 
         String rightAnswer;
         String question;
-        int numberOfQuestions = 3;
+        final int numberOfQuestions = 3;
         int randomNumber1;
         int randomNumber2;
+        int i = 1;
+        final int maxRandomNumber = 100;
 
-        while (Engine.i <= numberOfQuestions) {
-            randomNumber1 = random.nextInt(100);
-            randomNumber2 = random.nextInt(100);
+        while (i <= numberOfQuestions) {
+            randomNumber1 = random.nextInt(maxRandomNumber);
+            randomNumber2 = random.nextInt(maxRandomNumber);
             question = randomNumber1 + " " + randomNumber2;
             rightAnswer = Integer.toString(nodGsd(randomNumber1, randomNumber2));
             System.out.println("Question: " + question);
 
-            Engine.evaluationOfAnswers(rightAnswer);
+            Engine.evaluationOfAnswers(i, rightAnswer);
         }
         Engine.congratulations();
     }
