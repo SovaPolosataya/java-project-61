@@ -9,7 +9,7 @@ public class Progression {
         Engine.greeting();
         System.out.println("What number is missing in the progression?");
 
-        String rightAnswer = null;
+        String rightAnswer = "";
         int numberOfQuestions = 3;
         int randomNumber;
         int randomProgressionStep;
