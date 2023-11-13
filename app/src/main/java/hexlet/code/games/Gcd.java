@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import static hexlet.code.Engine.i;
-
 import java.util.Random;
 
 public class Gcd {
@@ -38,6 +36,7 @@ public class Gcd {
         int randomNumber1;
         int randomNumber2;
         final int maxRandomNumber = 100;
+        int i = 1;
 
         while (i <= numberOfQuestions) {
             randomNumber1 = random.nextInt(maxRandomNumber);
@@ -46,7 +45,16 @@ public class Gcd {
             rightAnswer = Integer.toString(nodGsd(randomNumber1, randomNumber2));
             System.out.println("Question: " + question);
 
-            Engine.evaluationOfAnswers(rightAnswer);
+            System.out.print("Your answer: ");
+            String userAnswer = Engine.getScanner().next();
+
+            if (userAnswer.equals(rightAnswer)) {
+                System.out.println("Correct!");
+                i = i + 1;
+            } else {
+                Engine.evaluationOfAnswers(userAnswer, rightAnswer);
+                break;
+            }
         }
         Engine.congratulations();
     }
