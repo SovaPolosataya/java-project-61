@@ -1,8 +1,6 @@
 package hexlet.code.games;
-
 import java.util.Random;
 import hexlet.code.Engine;
-
 public class Prime {
     public static String isPrime(int randomNumber) {
         String answer = "";
@@ -20,14 +18,11 @@ public class Prime {
     }
     public static void primeGame() {
         Random random = new Random();
-
         Engine.greeting();
         String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-
         final int maxRandomNumber = 100;
         final int tasksNumber = 3;
         int randomNumber;
-
         String[] questions = new String[tasksNumber];
         String[] rightAnswers = new String[tasksNumber];
         for (int y = 0; y < tasksNumber; y++) {

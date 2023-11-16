@@ -1,8 +1,6 @@
 package hexlet.code.games;
-
 import hexlet.code.Engine;
 import java.util.Random;
-
 public class Gcd {
     public static int nodGsd(int a, int b) {
         int max = a;
@@ -26,18 +24,14 @@ public class Gcd {
     }
     public static void gcdGame() {
         Random random = new Random();
-
         Engine.greeting();
         String task = "Find the greatest common divisor of given numbers.";
-
         final int maxRandomNumber = 100;
         final int tasksNumber = 3;
         int randomNumber1;
         int randomNumber2;
-
         String[] questions = new String[tasksNumber];
         String[] rightAnswers = new String[tasksNumber];
-
         for (int y = 0; y < tasksNumber; y++) {
             randomNumber1 = random.nextInt(maxRandomNumber);
             randomNumber2 = random.nextInt(maxRandomNumber);

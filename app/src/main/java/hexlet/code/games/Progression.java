@@ -1,14 +1,11 @@
 package hexlet.code.games;
-
 import java.util.Random;
 import hexlet.code.Engine;
 public class Progression {
     public static void progressionGame() {
         Random random = new Random();
-
         Engine.greeting();
         String task = "What number is missing in the progression?";
-
         final int progressionLength = 10;
         final int maxRandomNumber = 30;
         final int maxRandomProgressionStep = 9;
@@ -18,7 +15,6 @@ public class Progression {
         int unknownNumber;
         int randomNumber;
         String rightAnswer = "";
-
         String[] questions = new String[tasksNumber];
         String[] rightAnswers = new String[tasksNumber];
         for (int y = 0; y < tasksNumber; y++) {
