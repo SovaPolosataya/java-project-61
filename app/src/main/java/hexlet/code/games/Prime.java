@@ -4,44 +4,37 @@ import java.util.Random;
 import hexlet.code.Engine;
 
 public class Prime {
+    public static String isPrime(int randomNumber) {
+        String answer = "";
+        if (randomNumber < 2) {
+            answer = "no";
+        }
+        for (int j = 2; j < randomNumber / 2; j++) {
+            if (randomNumber % j == 0) {
+                answer = "no";
+                break;
+            }
+            answer = "yes";
+        }
+        return answer;
+    }
     public static void primeGame() {
         Random random = new Random();
 
         Engine.greeting();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String rightAnswer = "";
-        String yes = "yes";
-        String no = "no";
-        final int numberOfQuestions = 3;
-        int randomNumber;
         final int maxRandomNumber = 100;
-        int i = 1;
+        final int tasksNumber = 3;
+        int randomNumber;
 
-        while (i <= numberOfQuestions) {
+        String[] questions = new String[tasksNumber];
+        String[] rightAnswers = new String[tasksNumber];
+        for (int y = 0; y < tasksNumber; y++) {
             randomNumber = random.nextInt(maxRandomNumber);
-            if (randomNumber < 2) {
-                rightAnswer = no;
-            }
-            for (int j = 2; j < randomNumber; j++) {
-                if (randomNumber % j == 0) {
-                    rightAnswer = no;
-                    break;
-                }
-                rightAnswer = yes;
-            }
-            System.out.println("Question: " + randomNumber);
-            System.out.print("Your answer: ");
-            String userAnswer = Engine.getScanner().next();
-
-            if (userAnswer.equals(rightAnswer)) {
-                System.out.println("Correct!");
-                i = i + 1;
-            } else {
-                Engine.evaluationOfAnswers(userAnswer, rightAnswer);
-                break;
-            }
+            questions[y] = Integer.toString(randomNumber);
+            rightAnswers[y] = isPrime(randomNumber);
         }
-        Engine.congratulations();
+        Engine.gameShell(task, questions, rightAnswers);
     }
 }
