@@ -3,16 +3,14 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-
-    // У меня все было так красиво...
-    // если бы не дурацкий линтер в проверке на ГитХабе. Тоска-печаль(
+    /*  Сделала в каждом классе по два массива (с вопросами и правильными ответами) и цикл к ним.
+    Читала, что многие не любят массивы и циклы в коде,  но мне они кажутся довольно удобными,
+    если не злоупотреблять. В любом случае, можно обойтись и без них, но тогда придется
+    создавать кучу переменных, делить метод в Engine и т.п. Варианты есть, но мне они кажутся
+    менее удобными. В любом случае, если надо - переделаю.) */
     private static final Scanner SCANNER = new Scanner(System.in);
     private static String userName;
-    private static boolean responseError = false;
 
-    public static Scanner getScanner() {
-        return SCANNER;
-    }
     public static void greeting() {
 
         System.out.println("Welcome to the Brain Games!");
@@ -20,14 +18,30 @@ public class Engine {
         userName = SCANNER.next();
         System.out.println("Hello, " + userName + "!");
     }
-    public static void evaluationOfAnswers(String answerFromUser, String answer) {
-            System.out.println("'" + answerFromUser + "' is wrong answer ;(. Correct answer was '" + answer + "'.");
-            System.out.println("Let's try again, " + userName + "!");
-            responseError = true;
+    public static void gameShell(String task, String[] questions, String[] rightAnswers) {
+        boolean responseError = false;
+        final int numberOfQuestions = 2;
+        int i = 0;
 
-    }
-    public static void congratulations() {
+        System.out.println(task);
 
+        while (i <= numberOfQuestions) {
+            System.out.println("Question: " + questions[i]);
+
+            System.out.print("Your answer: ");
+            String userAnswer = SCANNER.next();
+
+            if (userAnswer.equals(rightAnswers[i])) {
+                System.out.println("Correct!");
+                i = i + 1;
+            } else {
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + rightAnswers[i] + "'.");
+                System.out.println("Let's try again, " + userName + "!");
+                responseError = true;
+                break;
+            }
+        }
         if (!responseError) {
             System.out.println("Congratulations, " + userName + "!");
         }
