@@ -3,7 +3,9 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/2c94789c8579297af20b/maintainability)](https://codeclimate.com/github/SovaPolosataya/java-project-61/maintainability)
 
-[![asciicast](https://asciinema.org/a/619628.svg)](https://asciinema.org/a/619628)
+This project consists of five games.Each game offers the user three questions that require basic knowledge of arithmetic to answer.The launch of each game takes place through the general menu.
+
+[![asciicast](https://asciinema.org/a/SYChU7UH7vByOGkTdik4cx1KR.svg)](https://asciinema.org/a/SYChU7UH7vByOGkTdik4cx1KR)
 
 [![asciicast](https://asciinema.org/a/HAE0PxbSX0x2SnD11RFdrLBaR.svg)](https://asciinema.org/a/HAE0PxbSX0x2SnD11RFdrLBaR)
 
