@@ -1,13 +1,11 @@
 package hexlet.code;
+
+import java.util.Scanner;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-
-
-import java.util.Scanner;
-
 
 public class App {
     public static void main(String[] args) {
@@ -43,7 +41,8 @@ public class App {
                 Prime.primeGame();
                 break;
             default:
-                scanner.close();
+                break;
         }
+        scanner.close();
     }
 }
