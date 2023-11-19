@@ -1,38 +1,34 @@
 package hexlet.code.games;
-import java.util.Random;
+
+import hexlet.code.Utils;
 import hexlet.code.Engine;
+import static hexlet.code.Engine.NUMBER_OF_QUESTION;
+
 public class Prime {
-    public static String isPrime(int randomNumber) {
-        String answer = "";
+    public static boolean isPrime(int randomNumber) {
         if (randomNumber < 2) {
-            answer = "no";
+            return false;
         }
-        for (int j = 2; j <= randomNumber / 2; j++) {
+        for (int j = 2; j < randomNumber; j++) {
             if (randomNumber % j == 0) {
-                answer = "no";
-                break;
+                return false;
             }
-            answer = "yes";
-        }
-        return answer;
+        } return true;
     }
     public static void primeGame() {
-        Random random = new Random();
-
         String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int randomNumber;
-        final int tasksNumber = 3;
         final int maxRandomNumber = 100;
 
-        Engine.greeting();
-        String[] rightAnswers = new String[tasksNumber];
-        String[] questions = new String[tasksNumber];
+        String[] rightAnswers = new String[NUMBER_OF_QUESTION];
+        String[] questions = new String[NUMBER_OF_QUESTION];
 
-        for (int y = 0; y < tasksNumber; y++) {
-            randomNumber = random.nextInt(maxRandomNumber);
+        for (int y = 0; y < NUMBER_OF_QUESTION; y++) {
+            randomNumber = Utils.isRandom(maxRandomNumber);
+
             questions[y] = Integer.toString(randomNumber);
-            rightAnswers[y] = isPrime(randomNumber);
+            rightAnswers[y] = isPrime(randomNumber) ? "yes" : "no";
         }
-        Engine.gameShell(task, questions, rightAnswers);
+        Engine.runGame(task, questions, rightAnswers);
     }
 }
