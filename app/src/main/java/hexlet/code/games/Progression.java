@@ -6,7 +6,8 @@ import static hexlet.code.Engine.NUMBER_OF_QUESTION;
 import java.util.Arrays;
 
 public class Progression {
-    public static int[] isProgression(int randomNumber, int randomProgressionStep, int progressionLength) {
+    private static final String TASK = "What number is missing in the progression?";
+    public static int[] generateProgression(int randomNumber, int randomProgressionStep, int progressionLength) {
         int[] sequences = new int[progressionLength];
 
         for (int j = 0; j < progressionLength; j++) {
@@ -16,7 +17,6 @@ public class Progression {
         return sequences;
     }
     public static void progressionGame() {
-        String task = "What number is missing in the progression?";
         final int progressionLength = 10;
         final int maxRandomNumber = 30;
         final int maxRandomProgressionStep = 9;
@@ -28,14 +28,14 @@ public class Progression {
         int flagOfMissingNumber = -1;
         String question;
 
-        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][NUMBER_OF_QUESTION];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][2];
 
         for (int y = 0; y < NUMBER_OF_QUESTION; y++) {
-            randomNumber = Utils.isRandom(1, maxRandomNumber);
-            randomProgressionStep = Utils.isRandom(2, maxRandomProgressionStep);
-            unknownNumber = Utils.isRandom(maxUnknownNumber);
+            randomNumber = Utils.generateRandomNumber(1, maxRandomNumber);
+            randomProgressionStep = Utils.generateRandomNumber(2, maxRandomProgressionStep);
+            unknownNumber = Utils.generateRandomNumber(maxUnknownNumber);
 
-            int[] sequences = isProgression(randomNumber, randomProgressionStep, progressionLength);
+            int[] sequences = generateProgression(randomNumber, randomProgressionStep, progressionLength);
             rightAnswer = sequences[unknownNumber];
             sequences[unknownNumber] = flagOfMissingNumber;
 
@@ -45,6 +45,6 @@ public class Progression {
             questionsAndAnswers[y][0] = question;
             questionsAndAnswers[y][1] = Integer.toString(rightAnswer);
         }
-        Engine.runGame(task, questionsAndAnswers);
+        Engine.runGame(TASK, questionsAndAnswers);
     }
 }
