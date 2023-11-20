@@ -34,17 +34,16 @@ public class Calc {
         int operatorsLength = OPERATORS.length - 1;
         String randomOperator;
 
-        String[] questions = new String[NUMBER_OF_QUESTION];
-        String[] rightAnswers = new String[NUMBER_OF_QUESTION];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][NUMBER_OF_QUESTION];
 
         for (int y = 0; y < NUMBER_OF_QUESTION; y++) {
             randomNumber1 = Utils.isRandom(maxRandomNumber);
             randomNumber2 = Utils.isRandom(maxRandomNumber);
             randomOperator = OPERATORS[Utils.isRandom(operatorsLength)];
 
-            questions[y] = randomNumber1 + " " + randomOperator + " " + randomNumber2;
-            rightAnswers[y] = Integer.toString(calculate(randomNumber1, randomNumber2, randomOperator));
+            questionsAndAnswers[y][0] = randomNumber1 + " " + randomOperator + " " + randomNumber2;
+            questionsAndAnswers[y][1] = Integer.toString(calculate(randomNumber1, randomNumber2, randomOperator));
         }
-        Engine.runGame(task, questions, rightAnswers);
+        Engine.runGame(task, questionsAndAnswers);
     }
 }

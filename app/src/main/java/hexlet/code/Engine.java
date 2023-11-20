@@ -4,7 +4,10 @@ import java.util.Scanner;
 
 public class Engine {
 
-    /* 1. scanner.close() вынесла из default;
+    /* Приветствую!
+    *  Объединила массивы с вопросами и ответами в один.
+    *  По пунктам замечаний:
+    *  1. scanner.close() вынесла из default;
     *  2. Типы циклов поменяла. На самом деле, хотела это сделать еще в прошлый раз, т.к.
     *     там известное и небольшое кол-во итераций, но забыла((
     *  3. Проверку убрала;
@@ -29,21 +32,21 @@ public class Engine {
         userName = SCANNER.next();
         System.out.println("Hello, " + userName + "!");
     }
-    public static void runGame(String task, String[] questions, String[] rightAnswers) {
+    public static void runGame(String task, String[][] questionsAndAnswers) {
 
         Engine.greeting();
 
         System.out.println(task);
 
         for (int i = 0; i < NUMBER_OF_QUESTION; i++) {
-            System.out.println("Question: " + questions[i]);
+            System.out.println("Question: " + questionsAndAnswers[i][0]);
             System.out.print("Your answer: ");
             String userAnswer = SCANNER.next();
-            if (userAnswer.equals(rightAnswers[i])) {
+            if (userAnswer.equals(questionsAndAnswers[i][1])) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + rightAnswers[i] + "'.");
+                        + questionsAndAnswers[i][1] + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }

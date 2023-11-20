@@ -32,16 +32,15 @@ public class Gcd {
         int randomNumber1;
         int randomNumber2;
 
-        String[] questions = new String[NUMBER_OF_QUESTION];
-        String[] rightAnswers = new String[NUMBER_OF_QUESTION];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][NUMBER_OF_QUESTION];
 
         for (int y = 0; y < NUMBER_OF_QUESTION; y++) {
             randomNumber1 = Utils.isRandom(maxRandomNumber);
             randomNumber2 = Utils.isRandom(maxRandomNumber);
 
-            questions[y] =  randomNumber1 + " " + randomNumber2;
-            rightAnswers[y] = Integer.toString(nodGsd(randomNumber1, randomNumber2));
+            questionsAndAnswers[y][0] =  randomNumber1 + " " + randomNumber2;
+            questionsAndAnswers[y][1] = Integer.toString(nodGsd(randomNumber1, randomNumber2));
         }
-        Engine.runGame(task, questions, rightAnswers);
+        Engine.runGame(task, questionsAndAnswers);
     }
 }

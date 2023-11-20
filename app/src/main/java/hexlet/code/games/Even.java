@@ -14,15 +14,14 @@ public class Even {
         final int maxRandomNumber = 1000;
         int randomNumber;
 
-        String[] questions = new String[NUMBER_OF_QUESTION];
-        String[] rightAnswers = new String[NUMBER_OF_QUESTION];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][NUMBER_OF_QUESTION];
 
         for (int y = 0; y < NUMBER_OF_QUESTION; y++) {
             randomNumber = Utils.isRandom(maxRandomNumber);
 
-            questions[y] = Integer.toString(randomNumber);
-            rightAnswers[y] = isEven(randomNumber) ? "yes" : "no";
+            questionsAndAnswers[y][0] = Integer.toString(randomNumber);
+            questionsAndAnswers[y][1] = isEven(randomNumber) ? "yes" : "no";
         }
-        Engine.runGame(task, questions, rightAnswers);
+        Engine.runGame(task, questionsAndAnswers);
     }
 }

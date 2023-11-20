@@ -28,8 +28,7 @@ public class Progression {
         int flagOfMissingNumber = -1;
         String question;
 
-        String[] questions = new String[NUMBER_OF_QUESTION];
-        String[] rightAnswers = new String[NUMBER_OF_QUESTION];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][NUMBER_OF_QUESTION];
 
         for (int y = 0; y < NUMBER_OF_QUESTION; y++) {
             randomNumber = Utils.isRandom(1, maxRandomNumber);
@@ -43,9 +42,9 @@ public class Progression {
             question  = Arrays.toString(sequences).replaceAll("[\\[\\],]", "")
                     .replace("-1", "..");
 
-            questions[y] = question;
-            rightAnswers[y] = Integer.toString(rightAnswer);
+            questionsAndAnswers[y][0] = question;
+            questionsAndAnswers[y][1] = Integer.toString(rightAnswer);
         }
-        Engine.runGame(task, questions, rightAnswers);
+        Engine.runGame(task, questionsAndAnswers);
     }
 }
