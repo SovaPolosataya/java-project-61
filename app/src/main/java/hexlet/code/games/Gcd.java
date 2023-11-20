@@ -5,6 +5,8 @@ import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBER_OF_QUESTION;
 
 public class Gcd {
+
+    private static final String TASK = "Find the greatest common divisor of given numbers.";
     public static int nodGsd(int a, int b) {
         int max = a;
         int min = b;
@@ -27,20 +29,19 @@ public class Gcd {
         } return nod;
     }
     public static void gcdGame() {
-        String task = "Find the greatest common divisor of given numbers.";
         final int maxRandomNumber = 100;
         int randomNumber1;
         int randomNumber2;
 
-        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][NUMBER_OF_QUESTION];
+        String[][] questionsAndAnswers = new String[NUMBER_OF_QUESTION][2];
 
         for (int y = 0; y < NUMBER_OF_QUESTION; y++) {
-            randomNumber1 = Utils.isRandom(maxRandomNumber);
-            randomNumber2 = Utils.isRandom(maxRandomNumber);
+            randomNumber1 = Utils.generateRandomNumber(maxRandomNumber);
+            randomNumber2 = Utils.generateRandomNumber(maxRandomNumber);
 
             questionsAndAnswers[y][0] =  randomNumber1 + " " + randomNumber2;
             questionsAndAnswers[y][1] = Integer.toString(nodGsd(randomNumber1, randomNumber2));
         }
-        Engine.runGame(task, questionsAndAnswers);
+        Engine.runGame(TASK, questionsAndAnswers);
     }
 }
