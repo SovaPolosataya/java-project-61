@@ -17,6 +17,7 @@ public class Prime {
             }
         } return true;
     }
+
     public static void primeGame() {
         int randomNumber;
         final int maxRandomNumber = 100;
