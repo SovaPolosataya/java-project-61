@@ -3,7 +3,6 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-
     private static final Scanner SCANNER = new Scanner(System.in);
     public static final int NUMBER_OF_QUESTION = 3;
 

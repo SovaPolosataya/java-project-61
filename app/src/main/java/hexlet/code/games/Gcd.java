@@ -5,8 +5,8 @@ import hexlet.code.Utils;
 import static hexlet.code.Engine.NUMBER_OF_QUESTION;
 
 public class Gcd {
-
     private static final String TASK = "Find the greatest common divisor of given numbers.";
+
     public static int nodGsd(int a, int b) {
         int max = a;
         int min = b;
@@ -28,6 +28,7 @@ public class Gcd {
             }
         } return nod;
     }
+
     public static void gcdGame() {
         final int maxRandomNumber = 100;
         int randomNumber1;

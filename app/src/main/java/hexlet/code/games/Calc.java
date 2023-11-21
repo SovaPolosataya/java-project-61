@@ -22,13 +22,13 @@ public class Calc {
                 answer = randomNumber1 * randomNumber2;
                 break;
             default:
+                System.out.println("Для оператора " + operator + " не определена логика.");
                 break;
         }
         return answer;
     }
 
     public static void calcGame() {
-
         final int maxRandomNumber = 100;
         int randomNumber1;
         int randomNumber2;

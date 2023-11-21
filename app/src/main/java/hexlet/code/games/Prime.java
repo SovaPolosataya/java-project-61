@@ -6,6 +6,7 @@ import static hexlet.code.Engine.NUMBER_OF_QUESTION;
 
 public class Prime {
     private static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
     public static boolean isPrime(int randomNumber) {
         if (randomNumber < 2) {
             return false;

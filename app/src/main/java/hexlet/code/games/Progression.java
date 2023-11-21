@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class Progression {
     private static final String TASK = "What number is missing in the progression?";
+
     public static int[] generateProgression(int randomNumber, int randomProgressionStep, int progressionLength) {
         int[] sequences = new int[progressionLength];
 
@@ -16,6 +17,7 @@ public class Progression {
         }
         return sequences;
     }
+
     public static void progressionGame() {
         final int progressionLength = 10;
         final int maxRandomNumber = 30;
